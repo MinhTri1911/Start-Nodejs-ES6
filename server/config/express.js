@@ -11,6 +11,7 @@ const app = Express();
 app.use(Cors());
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({extended: true}));
+
 if (process.env.NODE_ENV === 'development') {
 	app.use(Morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'));
 }
